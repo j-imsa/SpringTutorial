@@ -1,5 +1,6 @@
 # Spring Tutorial
 
+
 ### Core
 
 * IoC
@@ -8,4 +9,13 @@
 * Context
 * SpEL
 * IoC Container
+
+
+#### Stereotype Annotations
+
+- @Component
+  - @Controller
+  - @Service
+  - @Repository
+
 

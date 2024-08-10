@@ -11,13 +11,12 @@ public class SpringTutorialApplication {
         // SpringApplication.run(SpringTutorialApplication.class, args);
         var context = new AnnotationConfigApplicationContext(SpringTutorialApplication.class);
 
-        Vehicle vehicle1 = context.getBean("vehicle2", Vehicle.class);
-        Vehicle vehicle2 = context.getBean("MustangVehicle", Vehicle.class);
-        Vehicle vehicle3 = context.getBean(Vehicle.class);
+        Vehicle vehicle = context.getBean(Vehicle.class);
+        vehicle.setName("Audi");
 
-        System.out.println(vehicle1.name());
-        System.out.println(vehicle2.name());
-        System.out.println(vehicle3.name());
+        System.out.println(vehicle.getName());
+
+        context.close(); // to @PreDestroy demonstration
     }
 
 }
