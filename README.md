@@ -61,3 +61,39 @@
   4. @After
   5. @Around
 
+
+### Web App
+
+- Web Server
+  - Servlet Container (Http web server -> Http servlet object)
+    - in: ServletRequest
+    - out: ServletResponse
+    - Apache Tomcat
+
+#### Dispatcher Servlet
+
+- before:
+  - /home => HomeServlet
+  - /about => AboutServlet
+  - /... => ...Servlet
+- after:
+  - /* => DispatcherServlet
+
+
+#### Web application
+
+1. Approach 1: **Spring MVC** + Spring Core + Spring Boot + ...
+2. Approach 2: Spring Core + Spring Boot + ...
+
+
+#### Spring Boot
+
+1. SpringBoot Starters
+   - spring-boot-starter-web
+2. Autoconfiguration
+   - convention-over-configuration
+3. Actuator and DevTools
+   - monitor app health, metrics, etc.
+   - LiveReload Server
+
+
