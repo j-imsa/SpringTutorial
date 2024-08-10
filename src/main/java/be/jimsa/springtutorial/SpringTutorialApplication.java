@@ -13,6 +13,7 @@ public class SpringTutorialApplication {
         var context = new AnnotationConfigApplicationContext(SpringTutorialApplication.class);
 
         Vehicle vehicle = context.getBean(Vehicle.class);
+        vehicle.setName("BMW");
         Person person = context.getBean(Person.class);
 
         System.out.println(vehicle);
