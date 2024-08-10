@@ -15,7 +15,7 @@ public class Person {
     private final Vehicle vehicle;
 
     @Autowired
-    public Person(@Qualifier("vehicle1") Vehicle vehicle) {
+    public Person(Vehicle vehicle) {
         this.vehicle = vehicle;
     }
 

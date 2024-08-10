@@ -1,24 +1,10 @@
 package be.jimsa.springtutorial.ws.configs;
 
-import be.jimsa.springtutorial.ws.beans.Vehicle;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @Configuration
+@EnableAspectJAutoProxy
 public class ProjectConfig {
 
-    @Bean
-    public Vehicle vehicle1() {
-        Vehicle vehicle = new Vehicle();
-        vehicle.setName("Audi");
-        return vehicle;
-    }
-
-    @Bean
-//    @Primary // to clarify the context.getBean(Vehicle.class)
-    public Vehicle vehicle2() {
-        Vehicle vehicle = new Vehicle();
-        vehicle.setName("Ferrari");
-        return vehicle;
-    }
 }
