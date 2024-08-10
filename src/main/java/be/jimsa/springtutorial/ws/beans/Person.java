@@ -11,8 +11,8 @@ public class Person {
     private final Vehicle vehicle;
 
     // @Autowired
-    public Person(Vehicle vehicle) {
-        this.vehicle = vehicle;
+    public Person(Vehicle vehicle2) {
+        this.vehicle = vehicle2;
     }
 
 }
