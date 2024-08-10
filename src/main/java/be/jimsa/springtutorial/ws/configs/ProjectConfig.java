@@ -16,10 +16,10 @@ public class ProjectConfig {
     }
 
     @Bean
-    public Person person() {
+    public Person person(Vehicle vehicle) {
         Person person = new Person();
         person.setName("John");
-        person.setVehicle(vehicle()); // wiring beans using method call
+        person.setVehicle(vehicle); // wiring beans using method parameters
         return person;
     }
 }
