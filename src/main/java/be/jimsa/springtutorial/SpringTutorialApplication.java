@@ -13,7 +13,7 @@ public class SpringTutorialApplication {
 
         VehicleService vehicleService = context.getBean(VehicleService.class);
 
-        vehicleService.doSomething();
+        vehicleService.doneSomething();
     }
 
 }
