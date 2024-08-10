@@ -13,9 +13,11 @@ public class SpringTutorialApplication {
 
         Vehicle vehicle1 = context.getBean("vehicle2", Vehicle.class);
         Vehicle vehicle2 = context.getBean("MustangVehicle", Vehicle.class);
+        Vehicle vehicle3 = context.getBean(Vehicle.class);
 
         System.out.println(vehicle1.name());
         System.out.println(vehicle2.name());
+        System.out.println(vehicle3.name());
     }
 
 }

@@ -3,11 +3,13 @@ package be.jimsa.springtutorial.ws.configs;
 import be.jimsa.springtutorial.ws.beans.Vehicle;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 @Configuration
 public class ProjectConfig {
 
     @Bean
+    @Primary
     Vehicle vehicle1() {
         return new Vehicle("Audi");
     }
