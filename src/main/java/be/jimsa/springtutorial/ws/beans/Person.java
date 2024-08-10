@@ -1,7 +1,6 @@
 package be.jimsa.springtutorial.ws.beans;
 
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Data
@@ -9,10 +8,10 @@ import org.springframework.stereotype.Component;
 public class Person {
     private String name;
 
-    private Vehicle vehicle;
+    private final Vehicle vehicle;
 
-    @Autowired
-    public void setVehicle(Vehicle vehicle) {
+    // @Autowired
+    public Person(Vehicle vehicle) {
         this.vehicle = vehicle;
     }
 
