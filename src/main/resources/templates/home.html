@@ -7,5 +7,9 @@
 </head>
 <body>
     <h1 id="title" th:text="'You are @' + ${pageName} + ', Hey '+ ${name}"></h1>
+    <hr>
+    <a th:href="@{/about}">About</a>
+    <a th:href="@{/course}">Course</a>
+    <a th:href="@{/contact}">Contact</a>
 </body>
 </html>
