@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${pageName}">Spring Tutorial</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <h1 id="title" th:text="'You are @' + ${pageName} + ', Hey '+ ${name}"></h1>
+</body>
+</html>
