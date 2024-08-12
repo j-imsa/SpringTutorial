@@ -3,9 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Course</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+<!--    <link rel="stylesheet" href="assets/css/style.css">-->
 </head>
 <body>
     <h1>Course Page</h1>
+    <hr>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Id</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="d : ${data}">
+            <td><label th:text="${d.name}"></label></td>
+            <td><label th:text="${d.email}"></label></td>
+            <td><label th:text="${d.id}"></label></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>
