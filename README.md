@@ -97,3 +97,25 @@
    - LiveReload Server
 
 
+#### Java Template Engine
+
+- [Thymeleaf](https://www.thymeleaf.org/)
+- [Apache FreeMarker](https://freemarker.apache.org/index.html)
+- [jte](https://jte.gg/)
+- Jakarta Server Page (JSP)
+- Jakarta Server Face (JSF)
+  - [PrimeFace](https://www.primefaces.org/)
+- ...
+
+
+#### Fetching Data
+
+1. @PathVariable
+   - www.jimsa.be/app/course <- Path variable
+2. @RequestParam
+   - www.jimsa.be/app?course=math&active=true <- Query Param
+   - Form data
+
+
+#### Validation
+
