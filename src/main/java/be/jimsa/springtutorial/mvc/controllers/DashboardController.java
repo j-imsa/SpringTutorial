@@ -12,6 +12,7 @@ public class DashboardController {
     public String displayDashboardPage(Model model, Authentication auth) {
          model.addAttribute("username", auth.getName());
          model.addAttribute("roles", auth.getAuthorities().toString());
-        return "dashboard.html";
+        // return "dashboard.html";
+        throw new RuntimeException("Winter is coming...");
     }
 }
