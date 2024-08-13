@@ -154,3 +154,4 @@
 #### Security
 
 - [Thymeleaf Extras Springsecurity6](https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity6)
+- CSRF
