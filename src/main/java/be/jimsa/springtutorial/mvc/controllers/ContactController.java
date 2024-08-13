@@ -1,6 +1,7 @@
 package be.jimsa.springtutorial.mvc.controllers;
 
 import be.jimsa.springtutorial.mvc.models.requests.UserRequest;
+import be.jimsa.springtutorial.mvc.services.ContactService;
 import be.jimsa.springtutorial.mvc.services.UserService;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
@@ -20,9 +21,11 @@ import java.util.List;
 public class ContactController {
 
     private final UserService userService;
+    private final ContactService contactService;
 
-    public ContactController(UserService userService) {
+    public ContactController(UserService userService, ContactService contactService) {
         this.userService = userService;
+        this.contactService = contactService;
     }
 
 
@@ -56,6 +59,7 @@ public class ContactController {
         log.info("Email address is {}", emailAddress);
 
         userService.manageUserInfo(user);
+        log.info("Counter is {}", contactService.increaseCounter(contactService.getCount() + 1));
 
         return new ModelAndView("redirect:/contact");
     }

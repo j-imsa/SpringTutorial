@@ -138,3 +138,15 @@
      - @EAN
      - @ISBN
 
+
+#### Spring Web Scope
+
+- Singleton
+- Prototype
+3. Request
+   - @RequestScope
+4. Session
+   - @SessionScope
+5. Application
+   - ApplicationScope
+
