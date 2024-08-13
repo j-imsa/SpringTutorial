@@ -119,3 +119,22 @@
 
 #### Validation
 
+- spring-boot-starter-validation:
+  1. jakarta.validation.constraints.*
+     - @Digits
+     - @Email
+     - @Max
+     - @Min
+     - @Not...
+     - @Pattern
+     - @Size
+  2. org.hibernate.validator.constraints.*
+     - @CreditCardNumber
+     - @Length
+     - Currency
+     - @Range
+     - @URL
+     - @UniqueElements
+     - @EAN
+     - @ISBN
+

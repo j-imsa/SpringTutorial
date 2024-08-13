@@ -40,8 +40,17 @@
         <br/>
 
         <button type="submit">Send message</button>
+
+        <div th:if="${#fields.hasAnyErrors()}">
+            <hr>
+            <ul>
+                <li th:each="err : ${#fields.allErrors()}" th:text="${err}"/>
+            </ul>
+        </div>
+
     </form>
 </div>
+
 
 </body>
 </html>

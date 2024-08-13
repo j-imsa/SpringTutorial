@@ -2,9 +2,11 @@ package be.jimsa.springtutorial.mvc.controllers;
 
 import be.jimsa.springtutorial.mvc.models.requests.UserRequest;
 import be.jimsa.springtutorial.mvc.services.UserService;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,8 +43,15 @@ public class ContactController {
     public ModelAndView manageForm(
             @RequestParam String name,
             @RequestParam(name = "email") String emailAddress,
-            @ModelAttribute("user") UserRequest user
+            @Valid @ModelAttribute("user") UserRequest user,
+            Errors errors
     ) {
+
+        if (errors.hasErrors()) {
+            log.info("Errors: {}", errors.getAllErrors());
+            return new ModelAndView("contact.html");
+        }
+
         log.info("Name is {}", name);
         log.info("Email address is {}", emailAddress);
 
