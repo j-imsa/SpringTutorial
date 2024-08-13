@@ -1,15 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 <head>
     <meta charset="UTF-8">
     <title th:text="${pageName}">Spring Tutorial</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <h1 id="title" th:text="'You are @' + ${pageName} + ', Hey '+ ${name}"></h1>
-    <hr>
-    <a th:href="@{/about}">About</a>
-    <a th:href="@{/course}">Course</a>
-    <a th:href="@{/contact}">Contact</a>
+<h1 id="title" th:text="'You are @' + ${pageName} + ', Hey '+ ${name}"></h1>
+<hr>
+<a th:href="@{/about}">About</a>
+<a th:href="@{/course}">Course</a>
+<a th:href="@{/contact}">Contact</a>
+<ul>
+    <li sec:authorize="isAnonymous()">
+        <a th:href="@{/login}">LogIn</a>
+    </li>
+    <li sec:authorize="isAuthenticated()">
+        <a th:href="@{/dashboard}">Dashboard</a>
+    </li>
+    <li sec:authorize="isAuthenticated()">
+        <a th:href="@{/logout}">Logout</a>
+    </li>
+</ul>
 </body>
 </html>

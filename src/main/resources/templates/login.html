@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<h1>Login Page</h1>
+<hr>
+<div>
+    <form th:action="@{/login}" method="post">
+        <div>
+            <li th:if="${!#strings.isEmpty(errorMessage)}" th:text="${errorMessage}"/>
+        </div>
+        <div>
+            <input type="text" name="username" id="username" placeholder="Username"/>
+            <input type="password" name="password" id="password" placeholder="Password"/>
+        </div>
+        <div>
+            <button>Log In</button>
+            <a href="">New User?</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>
