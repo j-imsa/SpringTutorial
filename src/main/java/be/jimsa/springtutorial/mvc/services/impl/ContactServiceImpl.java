@@ -5,11 +5,12 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.web.context.annotation.RequestScope;
+import org.springframework.web.context.annotation.SessionScope;
 
 @Slf4j
 @Service
-@RequestScope
+//@RequestScope
+@SessionScope
 @Getter
 @Setter
 public class ContactServiceImpl implements ContactService {
@@ -25,8 +26,7 @@ public class ContactServiceImpl implements ContactService {
     }
 
     @Override
-    public int increaseCounter(int increment) {
-        this.counter += increment;
-        return getCount();
+    public int increaseCounter() {
+        return ++this.counter;
     }
 }
