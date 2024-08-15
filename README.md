@@ -155,3 +155,113 @@
 
 - [Thymeleaf Extras Springsecurity6](https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity6)
 - CSRF
+
+#### Database
+
+- H2
+   - in-memory
+   - schema.sql
+   - data.sql
+   - /h2-console
+   - sa & ''
+
+
+<hr/>
+
+1. JDBC
+   - loading driver
+   - management connections
+   - statements
+   - resultSets
+   - ...
+
+
+2. Spring JDBC
+   - spring-boot-starter-jdbc
+   - JdbcTemplate
+```java
+String lastName = this.jdbcTemplate.queryForObject(
+        "select last_name from users where id = ?",
+        String.class,
+        123L
+);
+```
+   - NamedParameterJdbcTemplate
+```java
+String sql = "select count(*) from users where first_name = :first_name";
+SqlParameterSource namedParameters = new SqlParameterSource("first_name", XXX);
+this.namedParameterJdbcTemplate.queryForObject(
+        sql,
+        namedParameters,
+        Integer.class
+);
+```
+   - Using RowMapper
+     - BeanPropertyRowMapper
+   - application.properties
+     - spring.jdbc.template.*
+     - spring.jdbc.template.max-rows=500
+
+
+3. Spring Data Projects [Link](https://spring.io/projects/spring-data)
+   - Projects:
+      - Spring Data JDBC 
+      - Spring Data JPA
+      - Spring Data LDAP
+      - Spring Data MongoDB
+      - Spring Data Redis
+      - Spring Data R2DBC
+      - Spring Data REST
+      - Spring Data for Apache Cassandra
+      - Spring Data for Apache Geode
+      - Spring Data Couchbase (community module)
+      - Spring Data Elasticsearch (community module)
+      - Spring Data Envers
+      - Spring Data Neo4j (community module)
+      - ...
+   - Main modules
+     - Spring Data Commons
+       - Repository (marker interface)
+         - CrudRepository
+             - ListCrudRepository
+         - PagingAndSortingRepository
+             - ListPagingAndSortingRepository
+     - Spring Data JPA
+       - JpaRepository
+   - Community modules
+   
+   
+> ##### Project
+>
+> create a standalone Spring App which use two databases like MySql and PostgreSQL!
+>
+> - dependency
+> - application.yml (application.properties)
+>   - spring.datasource.mysql/postgres.url/username/password/driver-class-name
+>   - jpa.hibernate.ddl-auto
+>   - jpa.mysql/postgres.properties.hibernate.dialect
+> - DataSource
+> - EntityManager
+> - TransactionManager
+> - LocalContainerEntityManagerFactoryBean
+> - EntityManagerFactoryBuilder
+> - PlatformTransactionManager
+> - JpaTransactionManager
+> - @Primary
+> - @Qualifier
+> - @PersistenceContext(unitName = "mysqlPU")
+>   - private EntityManager mysqlEntityManager;
+> - @PersistenceContext(unitName = "postgresPU")
+>   - private EntityManager postgresEntityManager;
+
+<hr/>
+
+- JConnector
+- JDBC
+- JPA
+- Spring Data
+- Spring Data JPA
+- Hibernate
+
+<hr/>
+
