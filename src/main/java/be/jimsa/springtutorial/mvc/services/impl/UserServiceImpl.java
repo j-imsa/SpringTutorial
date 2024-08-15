@@ -1,7 +1,9 @@
 package be.jimsa.springtutorial.mvc.services.impl;
 
+import be.jimsa.springtutorial.mvc.models.entities.UserEntity;
 import be.jimsa.springtutorial.mvc.models.requests.UserRequest;
 import be.jimsa.springtutorial.mvc.models.responses.UserResponse;
+import be.jimsa.springtutorial.mvc.repositories.UserRepository;
 import be.jimsa.springtutorial.mvc.services.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -12,6 +14,12 @@ import java.util.stream.Stream;
 @Service
 @Slf4j
 public class UserServiceImpl implements UserService {
+
+    private final UserRepository userRepository;
+
+    public UserServiceImpl(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     @Override
     public List<String> getProfessions() {
@@ -54,6 +62,19 @@ public class UserServiceImpl implements UserService {
                         getMathData().stream()
                 )
                 .toList();
+    }
+
+    @Override
+    public boolean saveUser(UserRequest user) {
+        UserEntity savedUserEntity = userRepository.save(
+                new UserEntity(
+                        0L,
+                        user.getName(),
+                        user.getEmail(),
+                        user.getPassword()
+                )
+        );
+        return savedUserEntity.getId() > 0;
     }
 
 }

@@ -58,8 +58,8 @@ public class ContactController {
         log.info("Name is {}", name);
         log.info("Email address is {}", emailAddress);
 
-        userService.manageUserInfo(user);
-        log.info("Counter is {}", contactService.increaseCounter());
+        // userService.manageUserInfo(user);
+        userService.saveUser(user);
 
         return new ModelAndView("redirect:/contact");
     }

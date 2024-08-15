@@ -15,4 +15,6 @@ public interface UserService {
     List<UserResponse> getEnglishData();
 
     List<UserResponse> getAllData();
+
+    boolean saveUser(UserRequest user);
 }

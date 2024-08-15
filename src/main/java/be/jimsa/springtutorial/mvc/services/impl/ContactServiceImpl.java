@@ -8,25 +8,8 @@ import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
-//@RequestScope
-//@SessionScope
-//@ApplicationScope
 @Getter
 @Setter
 public class ContactServiceImpl implements ContactService {
-    private int counter = 0;
 
-    public ContactServiceImpl() {
-        log.info("ContactServiceImpl Bean initialized");
-    }
-
-    @Override
-    public int getCount() {
-        return this.counter;
-    }
-
-    @Override
-    public int increaseCounter() {
-        return ++this.counter;
-    }
 }

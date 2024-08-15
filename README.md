@@ -265,3 +265,10 @@ this.namedParameterJdbcTemplate.queryForObject(
 
 <hr/>
 
+- Query Methods in Spring Data JPA
+  - introducer + **By** + criteria
+- Auditing Support by Spring Data JPA
+  - @CreatedDate
+  - @CreatedBy
+  - @LastModifiedDate
+  - @LastModifiedBy
