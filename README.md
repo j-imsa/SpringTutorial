@@ -175,7 +175,6 @@
     - /h2-console
     - sa & ''
 
-<hr/>
 
 1. JDBC
     - loading driver
@@ -251,8 +250,7 @@ queryForObject(
 >
 > - dependency
 > - application.yml (application.properties)
-    >
-- spring.datasource.mysql/postgres.url/username/password/driver-class-name
+> - spring.datasource.mysql/postgres.url/username/password/driver-class-name
 >   - jpa.hibernate.ddl-auto
 >   - jpa.mysql/postgres.properties.hibernate.dialect
 > - DataSource
@@ -265,13 +263,11 @@ queryForObject(
 > - @Primary
 > - @Qualifier
 > - @PersistenceContext(unitName = "mysqlPU")
-    >
-- private EntityManager mysqlEntityManager;
+> - private EntityManager mysqlEntityManager;
 > - @PersistenceContext(unitName = "postgresPU")
-    >
-- private EntityManager postgresEntityManager;
+> - private EntityManager postgresEntityManager;
 
-<hr/>
+
 
 - JConnector
 - JDBC
@@ -280,7 +276,7 @@ queryForObject(
 - Spring Data JPA
 - Hibernate
 
-<hr/>
+
 
 - Query Methods in Spring Data JPA
     - introducer + **By** + criteria
@@ -290,7 +286,7 @@ queryForObject(
     - @LastModifiedDate
     - @LastModifiedBy
 
-<hr/>
+
 
 ### Custom Validation
 
@@ -298,7 +294,7 @@ queryForObject(
 2. impl ...
 3. using ...
 
-<hr/>
+
 
 ```java
 import jakarta.persistence.Transient;
@@ -307,7 +303,7 @@ import jakarta.persistence.Transient;
 private String noDbOp; // Won't participate in DB operations like creating a table's column
 ```
 
-<hr/>
+
 
 ## Database Relations
 
