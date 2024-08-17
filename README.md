@@ -272,3 +272,24 @@ this.namedParameterJdbcTemplate.queryForObject(
   - @CreatedBy
   - @LastModifiedDate
   - @LastModifiedBy
+
+<hr/>
+
+
+### Custom Validation
+
+1. @interface...
+2. impl ...
+3. using ...
+
+<hr/>
+
+```java
+import jakarta.persistence.Transient;
+
+@Transient
+private String noDbOp; // Won't participate in DB operations like creating a table's column
+```
+
+<hr/>
+

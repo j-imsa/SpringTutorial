@@ -71,7 +71,7 @@ public class UserServiceImpl implements UserService {
                         0L,
                         user.getName(),
                         user.getEmail(),
-                        user.getPassword()
+                        user.getPwd()
                 )
         );
         return savedUserEntity.getId() > 0;
