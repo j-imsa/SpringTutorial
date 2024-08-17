@@ -1,5 +1,7 @@
 # Spring Tutorial
 
+---
+
 ### Core
 
 * IoC
@@ -13,12 +15,16 @@
 * SpEL
 * IoC Container
 
+---
+
 #### Stereotype Annotations
 
 - @Component
     - @Controller
     - @Service
     - @Repository
+
+---
 
 #### Bean Scope
 
@@ -36,7 +42,9 @@
 4. Session
 5. Application
 
-#### Aspect Oriented Programming (AOP)
+---
+
+### Aspect Oriented Programming (AOP)
 
 - WWW
     - **What** -> Aspect
@@ -45,10 +53,14 @@
     - Join Point
     - Target Object
 
+---
+
 - Proxy Object of beans
     - Weaving
     - intercept
     - delegate
+
+---
 
 - Advice:
     1. @Before
@@ -57,6 +69,8 @@
     4. @After
     5. @Around
 
+---
+
 ### Web App
 
 - Web Server
@@ -64,6 +78,8 @@
         - in: ServletRequest
         - out: ServletResponse
         - Apache Tomcat
+
+---
 
 #### Dispatcher Servlet
 
@@ -74,12 +90,16 @@
 - after:
     - /* => DispatcherServlet
 
-#### Web application
+---
+
+### Web application
 
 1. Approach 1: **Spring MVC** + Spring Core + Spring Boot + ...
 2. Approach 2: Spring Core + Spring Boot + ...
 
-#### Spring Boot
+---
+
+### Spring Boot
 
 1. SpringBoot Starters
     - spring-boot-starter-web
@@ -89,7 +109,9 @@
     - monitor app health, metrics, etc.
     - LiveReload Server
 
-#### Java Template Engine
+---
+
+### Java Template Engine
 
 - [Thymeleaf](https://www.thymeleaf.org/)
 - [Apache FreeMarker](https://freemarker.apache.org/index.html)
@@ -99,6 +121,8 @@
     - [PrimeFace](https://www.primefaces.org/)
 - ...
 
+---
+
 #### Fetching Data
 
 1. @PathVariable
@@ -106,6 +130,8 @@
 2. @RequestParam
     - www.jimsa.be/app?course=math&active=true <- Query Param
     - Form data
+
+---
 
 #### Validation
 
@@ -128,6 +154,8 @@
         - @EAN
         - @ISBN
 
+---
+
 #### Spring Web Scope
 
 - Singleton
@@ -140,11 +168,14 @@
 5. Application
     - ApplicationScope
 
-#### Security
+---
+
+### Security
 
 - [Thymeleaf Extras Springsecurity6](https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity6)
 - CSRF
 
+---
 
 - Encoding
     - unicode
@@ -158,6 +189,7 @@
     - hash value
     - hashing function
 
+---
 
 - Password Encoder (using _hash algorithms_)
     - NoOpPasswordEncoder (No hashing stories in plain text)
@@ -166,7 +198,11 @@
     - BCryptPasswordEncoder (most commonly use)
     - SCryptPasswordEncoder
 
-#### Database
+---
+
+### Database
+
+---
 
 - H2
     - in-memory
@@ -175,6 +211,7 @@
     - /h2-console
     - sa & ''
 
+---
 
 1. JDBC
     - loading driver
@@ -183,6 +220,7 @@
     - resultSets
     - ...
 
+---
 
 2. Spring JDBC
     - spring-boot-starter-jdbc
@@ -216,6 +254,7 @@ queryForObject(
     - spring.jdbc.template.*
     - spring.jdbc.template.max-rows=500
 
+---
 
 3. Spring Data Projects [Link](https://spring.io/projects/spring-data)
     - Projects:
@@ -244,7 +283,9 @@ queryForObject(
             - JpaRepository
     - Community modules
 
-> ##### Project
+---
+
+> ## Project
 >
 > create a standalone Spring App which use two databases like MySql and PostgreSQL!
 >
@@ -267,7 +308,7 @@ queryForObject(
 > - @PersistenceContext(unitName = "postgresPU")
 > - private EntityManager postgresEntityManager;
 
-
+---
 
 - JConnector
 - JDBC
@@ -276,7 +317,7 @@ queryForObject(
 - Spring Data JPA
 - Hibernate
 
-
+---
 
 - Query Methods in Spring Data JPA
     - introducer + **By** + criteria
@@ -286,7 +327,7 @@ queryForObject(
     - @LastModifiedDate
     - @LastModifiedBy
 
-
+---
 
 ### Custom Validation
 
@@ -294,7 +335,7 @@ queryForObject(
 2. impl ...
 3. using ...
 
-
+---
 
 ```java
 import jakarta.persistence.Transient;
@@ -303,10 +344,22 @@ import jakarta.persistence.Transient;
 private String noDbOp; // Won't participate in DB operations like creating a table's column
 ```
 
-
+---
 
 ## Database Relations
 
 > IMPORTANT : [Link](https://github.com/j-imsa/Database-Relations)
 
+---
 
+### Sorting
+
+
+
+---
+
+### Paging
+
+
+
+---
