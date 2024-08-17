@@ -237,15 +237,15 @@ String lastName = this.jdbcTemplate.queryForObject(
 - NamedParameterJdbcTemplate
 
 ```java
-String sql = "select count(*) from users where first_name = :first_name";
-SqlParameterSource namedParameters = new SqlParameterSource("first_name", XXX);
-this.namedParameterJdbcTemplate.
-
-queryForObject(
-        sql,
-        namedParameters,
-        Integer .class
-);
+public int getCount(String firstName) {
+    String sql = "select count(*) from users where first_name = :first_name";
+    SqlParameterSource namedParameters = new SqlParameterSource("first_name", firstName);
+    return this.namedParameterJdbcTemplate.queryForObject(
+            sql,
+            namedParameters,
+            Integer.class
+    );
+}
 ```
 
 - Using RowMapper
@@ -291,7 +291,7 @@ queryForObject(
 >
 > - dependency
 > - application.yml (application.properties)
-> - spring.datasource.mysql/postgres.url/username/password/driver-class-name
+>   - spring.datasource.mysql/postgres.url/username/password/driver-class-name
 >   - jpa.hibernate.ddl-auto
 >   - jpa.mysql/postgres.properties.hibernate.dialect
 > - DataSource
@@ -355,11 +355,9 @@ private String noDbOp; // Won't participate in DB operations like creating a tab
 ### Sorting
 
 
-
 ---
 
 ### Paging
-
 
 
 ---
