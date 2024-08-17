@@ -156,6 +156,28 @@
 - [Thymeleaf Extras Springsecurity6](https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity6)
 - CSRF
 
+
+- Encoding
+  - unicode
+  - base64
+  - ascii
+  - file formats
+- Encryption
+  - key
+  - encryption
+- Hashing
+  - hash value
+  - hashing function
+
+
+- Password Encoder (using _hash algorithms_)
+  - NoOpPasswordEncoder (No hashing stories in plain text)
+  - StandardPasswordEncoder
+  - Pbkdf2PasswordEncoder
+  - BCryptPasswordEncoder (most commonly use)
+  - SCryptPasswordEncoder
+
+
 #### Database
 
 - H2
