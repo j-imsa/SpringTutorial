@@ -6,6 +6,7 @@ import be.jimsa.springtutorial.mvc.models.responses.UserResponse;
 import be.jimsa.springtutorial.mvc.repositories.UserRepository;
 import be.jimsa.springtutorial.mvc.services.UserService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,9 +17,11 @@ import java.util.stream.Stream;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public UserServiceImpl(UserRepository userRepository) {
+    public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
@@ -71,7 +74,7 @@ public class UserServiceImpl implements UserService {
                         0L,
                         user.getName(),
                         user.getEmail(),
-                        user.getPwd()
+                        passwordEncoder.encode(user.getPwd())
                 )
         );
         return savedUserEntity.getId() > 0;
