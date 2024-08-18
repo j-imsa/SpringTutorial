@@ -387,6 +387,10 @@ Page<Person> personPage = repo.findByName(name, pageable);
    - Native SQL query (`nativeQuery=true`)
 2. @NamedQuery
 3. @NamedNativeQuery
+   - Spring Data JPA doesn’t support dynamic sorting for native queries
+   - Example:
+     - [Link 1](https://github.com/eazybytes/spring/blob/3.3.1/example_44/src/main/java/com/eazybytes/eazyschool/model/Contact.java)
+     - [Link 2](https://github.com/eazybytes/spring/blob/3.3.1/example_44/src/main/java/com/eazybytes/eazyschool/repository/ContactRepository.java)
 
 ---
 
