@@ -1,6 +1,8 @@
 package be.jimsa.springtutorial.mvc.repositories;
 
 import be.jimsa.springtutorial.mvc.models.entities.UserEntity;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -28,12 +30,12 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
     Optional<UserEntity> getUserUsingQuery(String email, Long id);
 
     /*
-    * Normally, to use the update, we had to find the object first (findBy...),
-    * then save it again (.save()),
-    * which was considered as an update
-    * considering that the ID already existed!
-    * Now, we can use JPQL to update it directly!
-    * */
+     * Normally, to use the update, we had to find the object first (findBy...),
+     * then save it again (.save()),
+     * which was considered as an update
+     * considering that the ID already existed!
+     * Now, we can use JPQL to update it directly!
+     * */
     @Transactional
     @Modifying
     @Query("UPDATE UserEntity u SET u.email = ?1 WHERE u.id = ?2")
@@ -41,7 +43,11 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
 
 
     // 2. NamedQuery
+    Page<UserEntity> findUserNamedQuery(@Param("email") String emailAddress, Pageable pageable);
 
+    @Transactional
+    @Modifying
+    int updateUserNamedQuery(String email, long id);
 
     // 3. NamedNativeQuery
 

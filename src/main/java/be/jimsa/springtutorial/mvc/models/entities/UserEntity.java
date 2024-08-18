@@ -13,6 +13,12 @@ import lombok.*;
 @Getter
 @Entity
 @Table(name = "users")
+@NamedQueries({
+        @NamedQuery(name = "UserEntity.findUserNamedQuery",
+                query = "SELECT u FROM UserEntity u WHERE u.email = :email"),
+        @NamedQuery(name = "UserEntity.updateUserNamedQuery",
+                query = "UPDATE UserEntity u SET u.email = ?1 WHERE u.id = ?2")
+})
 public class UserEntity extends BaseEntity {
 
     @Id
