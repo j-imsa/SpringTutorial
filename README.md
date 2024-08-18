@@ -379,3 +379,20 @@ Page<Person> personPage = repo.findByName(name, pageable);
 ```
 
 ---
+
+### Custom Query with JPA
+
+1. @Query
+   - JPQL
+   - Native SQL query (`nativeQuery=true`)
+2. @NamedQuery
+3. @NamedNativeQuery
+
+---
+
+- Update, Delete, Insert
+  - `@Transactional`
+  - `@Modifying`
+
+---
+
