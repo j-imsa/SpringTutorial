@@ -354,10 +354,28 @@ private String noDbOp; // Won't participate in DB operations like creating a tab
 
 ### Sorting
 
+1. static
+   - ```findByOrderByNameDesc()```
+2. dynamic
+   - ```Sort.by("name").descending().and(Sort.by("age"))```
+
 
 ---
 
 ### Paging
 
+```java
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+
+Pageable pageable = PageRequest.of(
+        0,
+        10,
+        Sort.by("name").descending()
+);
+Page<Person> personPage = repo.findByName(name, pageable);
+```
 
 ---

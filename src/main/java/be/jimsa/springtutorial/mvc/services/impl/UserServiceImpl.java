@@ -6,6 +6,9 @@ import be.jimsa.springtutorial.mvc.models.responses.UserResponse;
 import be.jimsa.springtutorial.mvc.repositories.UserRepository;
 import be.jimsa.springtutorial.mvc.services.UserService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +25,13 @@ public class UserServiceImpl implements UserService {
     public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
+
+        Sort sort = Sort.by(Sort.Direction.ASC, "id");
+        Page<UserEntity> userEntityPage = userRepository.findAll(PageRequest.of(0, 10, sort));
+        log.info("Total Elements: {}", userEntityPage.getTotalElements());
+        log.info("Total Pages: {}", userEntityPage.getTotalPages());
+        log.info("Number Of Elements: {}", userEntityPage.getNumberOfElements());
+        log.info("Size: {}", userEntityPage.getSize());
     }
 
     @Override
