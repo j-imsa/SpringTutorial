@@ -14,8 +14,12 @@ public class SecurityConfig {
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
-                .csrf(httpSecurityCsrfConfigurer -> httpSecurityCsrfConfigurer.ignoringRequestMatchers("/saveMessage")) // just for now!
+                .csrf(httpSecurityCsrfConfigurer ->
+                        httpSecurityCsrfConfigurer
+                                .ignoringRequestMatchers("/api/**", "/saveMessage")
+                )
                 .authorizeHttpRequests(authorizeRequests -> {
+                    authorizeRequests.requestMatchers("/api/**").permitAll();
                     authorizeRequests.requestMatchers("/assets/**").permitAll();
                     authorizeRequests.requestMatchers("/", "/home").permitAll();
                     authorizeRequests.requestMatchers("/about").permitAll();

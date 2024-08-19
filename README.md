@@ -400,3 +400,89 @@ Page<Person> personPage = repo.findByName(name, pageable);
 
 ---
 
+## Rest APIs
+
+- `@RestController = @Controller + @ResponseBody`
+- `@RestControllerAdvice`
+- `ReponseEntity<T>`
+- `RequestEntity<T>` -> `getBody()`
+- `@RequestHeader`
+- `@RequestBody`
+
+---
+
+#### Cross-origin resource sharing (CORS)
+
+- protocol
+- domain
+- port
+
+
+- `@CrossOrigin("*")`
+
+---
+
+### Jackson JSON
+
+[link](https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-methods/jackson.html)
+
+```java
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.time.LocalDateTime;
+
+@JsonProperty("first_name")
+private String firstName;
+
+@JsonIgnore
+private LocalDateTime createdAt;
+```
+
+---
+
+Requests:
+
+
+```
+curl --location 'http://localhost:8090/springapp/api/person'
+```
+
+
+```
+curl --location --request GET 'http://localhost:8090/springapp/api/person/byRequestBodyAnnotation' \
+--header 'Content-Type: application/json' \
+--data '{
+    "first_name": "jimsa2",
+    "last_name": "salehi2"
+}'
+```
+
+
+```
+curl --location 'http://localhost:8090/springapp/api/person' \
+--header 'invocationFrom: mobile' \
+--header 'Content-Type: application/json' \
+--data '{
+    "first_name": "jimsa3",
+    "last_name": "salehi3"
+}'
+```
+
+```
+curl --location --request DELETE 'http://localhost:8090/springapp/api/person' \
+--header 'Content-Type: application/json' \
+--data '{
+    "first_name": "jimsa4",
+    "last_name": "salehi4"
+}'
+```
+
+
+```
+curl --location --request PATCH 'http://localhost:8090/springapp/api/person' \
+--header 'Content-Type: application/json' \
+--data '{
+    "first_name": "jimsa6"
+}'
+```
