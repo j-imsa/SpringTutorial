@@ -486,3 +486,12 @@ curl --location --request PATCH 'http://localhost:8090/springapp/api/person' \
     "first_name": "jimsa6"
 }'
 ```
+
+---
+
+### Rest APIs consuming
+
+> IMPORTANT : [Link](https://github.com/j-imsa/Rest-APIs-Consuming)
+
+---
+
