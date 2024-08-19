@@ -495,3 +495,11 @@ curl --location --request PATCH 'http://localhost:8090/springapp/api/person' \
 
 ---
 
+
+### Spring Data Rest & HAL Explorer
+
+- [link1](https://github.com/j-imsa/Spring-Data-Rest-HAL-Explorer)
+- [link2](https://spring.io/projects/spring-data-rest)
+- [link3](https://docs.spring.io/spring-data/rest/reference/tools.html)
+
+---
