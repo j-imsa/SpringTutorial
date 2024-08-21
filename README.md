@@ -525,3 +525,12 @@ Levels:
 - debug
 - trace
 
+---
+
+### Configuration
+
+- @Value
+- environment.getProperty("...") 
+- `-> default into application.properties`
+
+
