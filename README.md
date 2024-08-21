@@ -503,3 +503,25 @@ curl --location --request PATCH 'http://localhost:8090/springapp/api/person' \
 - [link3](https://docs.spring.io/spring-data/rest/reference/tools.html)
 
 ---
+
+### Logging
+
+* AOP -> MyLogAspect
+
+
+Libs:
+
+- Java util logging
+- Log4J2
+- SLF4J
+- Logback
+
+Levels:
+
+- fatal
+- error
+- warn
+- info
+- debug
+- trace
+
