@@ -534,3 +534,16 @@ Levels:
 - `-> default into application.properties`
 
 
+---
+
+### Profile
+
+- application_prod.properties
+- application_dev.properties
+
+`spring.profiles.active`
+
+- @Profile("!dev")
+
+---
+
