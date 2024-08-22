@@ -3,6 +3,7 @@ target/
 .idea/
 mvnw
 mvnw.cmd
+*.log
 
 ### STS ###
 .apt_generated

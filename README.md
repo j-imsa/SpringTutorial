@@ -514,7 +514,13 @@ Libs:
 - Java util logging
 - Log4J2
 - SLF4J
-- Logback
+- Logback 
+  - The default logging framework
+  - The default logging destination is the console
+    - System.out
+    - System.err 
+  - [Link](https://wirekat.com/logging-in-java-spring-boot-best-practices-and-tutorial/)
+
 
 Levels:
 
