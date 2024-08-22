@@ -20,6 +20,7 @@ public class SecurityConfig {
                 )
                 .authorizeHttpRequests(authorizeRequests -> {
                     authorizeRequests.requestMatchers("/api/**").permitAll();
+                    authorizeRequests.requestMatchers("/actuator/**").permitAll();
                     authorizeRequests.requestMatchers("/assets/**").permitAll();
                     authorizeRequests.requestMatchers("/", "/home").permitAll();
                     authorizeRequests.requestMatchers("/about").permitAll();

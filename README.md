@@ -553,3 +553,7 @@ Levels:
 
 ---
 
+### Spring Actuator and Spring Boot Admin
+
+- `http://localhost:8090/springapp/actuator/`
+- `management.endpoints.web.exposure.include=*`
