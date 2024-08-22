@@ -557,3 +557,34 @@ Levels:
 
 - `http://localhost:8090/springapp/actuator/`
 - `management.endpoints.web.exposure.include=*`
+
+* Spring Boot Admin
+  * client
+    * [link](https://mvnrepository.com/artifact/de.codecentric/spring-boot-admin-starter-client)
+  * server
+    * [link](https://mvnrepository.com/artifact/de.codecentric/spring-boot-admin-starter-server)
+  * hibernate-micrometer
+    * [link](https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-micrometer)
+
+---
+
+Heap Dumps
+
+1. JDK Tools
+   * jmap 
+   * jcmd
+   * JVisualVM
+2. Automatically
+   * `java -XX:+HeapDumpOnOutOfMemoryError`
+   * `java -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=<file-or-dir-path>`
+3. JMX
+   * JConsole
+   * Programmatic Way
+```java
+public static void dumpHeap(String filePath, boolean live) throws IOException {
+    MBeanServer server = ManagementFactory.getPlatformMBeanServer();
+    HotSpotDiagnosticMXBean mxBean = ManagementFactory.newPlatformMXBeanProxy(
+      server, "com.sun.management:type=HotSpotDiagnostic", HotSpotDiagnosticMXBean.class);
+    mxBean.dumpHeap(filePath, live);
+}
+```
